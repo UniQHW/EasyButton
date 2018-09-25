@@ -5,10 +5,6 @@ Welcome reader! There are little to no words that describe the gratitude I give 
 - [Introduction](#introduction)
 - [Observation](#observation)
 - [Hacking](#hacking)
-- [Software projects](#software-projects)
-  - [Bash Button](https://github.com/UniQHW/EasyButton_Bash-Button)
-  - [Easy Button Handler](https://github.com/UniQHW/EasyButton_Handler)
-
 
 ## Introduction
 
@@ -54,9 +50,9 @@ Lets take a look at some interesting parts:
 
 The battery connectors can be found to the top right of the circuit, where the upper pin connects to the batteries cathode (`VCC`), and the lower pin connects to the batteries anode (`GND`).
 
-Moving to the top left, we get to see the heart/core of of the buttons circuit. The black epoxy blob covers the devices [chip on board](https://en.wikipedia.org/wiki/Electronic_packaging) which stores the raw audio of the "That was easy!" dialogue. In addition to storing a recording of the dialogue, it handles button push events and even features and the audio playback. The COP has a total of 10 copper traces leading to it, of those however, 1 remains unused.
+Moving to the top left, we get to see the heart/core of of the buttons circuit. The black epoxy blob covers the devices [chip on board](https://en.wikipedia.org/wiki/Electronic_packaging) which stores the raw audio of the "That was easy!" dialogue. In addition to storing a recording of the dialogue, it handles button push events and the audio playback. The COB (Chip On Board) has a total of 10 copper traces leading to it, of those however, 1 oddly remains unused.
 
-Unfortunately, I do not own the necessary tools to inspect the COP further besides from the evidence provided from external output. As a result we must treat it as a black box.
+Unfortunately, I do not own the necessary tools to inspect the COB further besides from the evidence provided by external output. As a result we must treat it more or less as a black box.
 
 I've been able to conclude the following schematic by testing the PCB with my multi meter:
 
@@ -78,8 +74,8 @@ The modified circuit board is attached to my Arduino the following way:
 
 In oder to put the plastic case back on, I've lead the wires trough 2 of the 4 screw holes.
 
-## Software projects
-From this point on I highly recommend taking a look at my software projects :
+## Bash Button
 
-- [Bash Button](https://github.com/UniQHW/EasyButton_Bash-Button) - Bootstrap bash scripts to your Staples Easy Button!
-- [Easy Button Handler](https://github.com/UniQHW/EasyButton_Handler) - An handler interface class for projects involving my modified Staples Easy Button
+Now that I can detect if the button has been pressed, it is solely up to my creativity how to further interpret a button press. I figured I could write a host sided python server that would execute a bash command upon a button press. To put this into perspective, I could assign the button to mail an essay to my teachers. I could also assign the button to shut down or restart my computer. And if you really want to take things to the extreme, if I had access to a nuclear weapons arsenal (which I thankfully don't have), I could assign the button to launch a nuke.
+
+And this is exactly what [Bash Button](https://github.com/UniQHW/EasyButton_Bash-Button) is about. For a technical understanding of the project, I highly encourage people to take a look at the [project repository](https://github.com/UniQHW/EasyButton_Bash-Button).
