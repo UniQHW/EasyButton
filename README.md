@@ -5,6 +5,7 @@ Welcome reader! There are little to no words that describe the gratitude I give 
 - [Introduction](#introduction)
 - [Observation](#observation)
 - [Hacking](#hacking)
+- [Bash Button](#bash button)
 
 ## Introduction
 
